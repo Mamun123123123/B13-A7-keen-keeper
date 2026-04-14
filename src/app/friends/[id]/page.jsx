@@ -19,11 +19,12 @@ export default function FriendDetails({ params }) {
     "almost due": "bg-orange-100 text-orange-700",
   };
 
-  // ✅ ADD TIMELINE FUNCTION
+
   const addTimeline = (type) => {
     const key = `timeline-${friend.id}`;
 
-    const existing = JSON.parse(localStorage.getItem(key)) || [];
+    const existing =
+      JSON.parse(localStorage.getItem(key)) || [];
 
     const newEntry = {
       id: Date.now(),
@@ -36,13 +37,14 @@ export default function FriendDetails({ params }) {
 
     localStorage.setItem(key, JSON.stringify(updated));
 
-    toast.success(`${type} added to timeline`);
+
+    toast.success(`${type} with ${friend.name}`);
   };
 
   return (
     <div className="min-h-screen bg-gray-50 px-4 sm:px-6 py-8 text-black">
 
-      {/* HEADER */}
+    
       <div className="mb-8">
         <h1 className="text-2xl sm:text-3xl font-bold">
           Friend Details
@@ -54,7 +56,6 @@ export default function FriendDetails({ params }) {
 
       <div className="grid grid-cols-1 lg:grid-cols-3 gap-6">
 
-        {/* LEFT CARD */}
         <div className="bg-white border rounded-2xl p-6 text-center shadow-sm">
 
           <img
@@ -66,9 +67,10 @@ export default function FriendDetails({ params }) {
             {friend.name}
           </h2>
 
-          <p className="text-sm text-gray-500">{friend.email}</p>
+          <p className="text-sm text-gray-500">
+            {friend.email}
+          </p>
 
-          {/* STATUS */}
           <span
             className={`inline-block mt-3 text-xs px-3 py-1 rounded-full font-medium ${
               statusBg[friend.status]
@@ -77,12 +79,12 @@ export default function FriendDetails({ params }) {
             {friend.status}
           </span>
 
-          {/* BIO */}
+    
           <p className="text-sm text-gray-600 mt-4">
             {friend.bio}
           </p>
 
-          {/* TAGS */}
+    
           <div className="flex flex-wrap justify-center gap-2 mt-4">
             {friend.tags.map((t, i) => (
               <span
@@ -94,24 +96,26 @@ export default function FriendDetails({ params }) {
             ))}
           </div>
 
-          {/* ACTIONS */}
+    
           <div className="mt-6 space-y-2">
             <button className="w-full bg-gray-100 hover:bg-gray-200 py-2 rounded-xl text-sm">
               ⏰ Snooze 2 Weeks
             </button>
+
             <button className="w-full bg-gray-100 hover:bg-gray-200 py-2 rounded-xl text-sm">
               📦 Archive
             </button>
+
             <button className="w-full bg-red-50 hover:bg-red-100 text-red-600 py-2 rounded-xl text-sm">
               🗑️ Delete
             </button>
           </div>
         </div>
 
-        {/* RIGHT SIDE */}
+    
         <div className="lg:col-span-2 space-y-6">
 
-          {/* STATS */}
+    
           <div className="grid grid-cols-1 sm:grid-cols-3 gap-4">
 
             <div className="bg-white border rounded-2xl p-5 text-center">
@@ -137,11 +141,13 @@ export default function FriendDetails({ params }) {
 
           </div>
 
-          {/* GOAL CARD */}
+          
           <div className="bg-white border rounded-2xl p-6">
 
             <div className="flex justify-between items-center">
-              <h3 className="font-semibold">Relationship Goal</h3>
+              <h3 className="font-semibold">
+                Relationship Goal
+              </h3>
 
               <button
                 onClick={() => setIsEditing(!isEditing)}
@@ -177,7 +183,7 @@ export default function FriendDetails({ params }) {
             )}
           </div>
 
-          {/* QUICK CHECK-IN */}
+          
           <div className="bg-white border rounded-2xl p-6">
 
             <h3 className="font-semibold mb-4">
@@ -188,21 +194,21 @@ export default function FriendDetails({ params }) {
 
               <button
                 onClick={() => addTimeline("Call")}
-                className="bg-green-50 text-green-700 py-3 rounded-xl"
+                className="bg-green-50 hover:bg-green-100 text-green-700 py-3 rounded-xl transition"
               >
                 📞 Call
               </button>
 
               <button
                 onClick={() => addTimeline("Text")}
-                className="bg-blue-50 text-blue-700 py-3 rounded-xl"
+                className="bg-blue-50 hover:bg-blue-100 text-blue-700 py-3 rounded-xl transition"
               >
                 💬 Text
               </button>
 
               <button
                 onClick={() => addTimeline("Video")}
-                className="bg-purple-50 text-purple-700 py-3 rounded-xl"
+                className="bg-purple-50 hover:bg-purple-100 text-purple-700 py-3 rounded-xl transition"
               >
                 🎥 Video
               </button>
