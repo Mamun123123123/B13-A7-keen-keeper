@@ -1,36 +1,29 @@
-This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://github.com/vercel/next.js/tree/canary/packages/create-next-app).
+📌 KeenKeeper
 
-## Getting Started
+A personal relationship management app that helps you track and maintain meaningful connections with friends, colleagues, and loved ones.
 
-First, run the development server:
+🧾 Description
 
-```bash
-npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
-```
+KeenKeeper is a modern web application designed to help users stay connected with important people in their lives.
+It tracks interactions like calls, texts, and video chats, and reminds you when it’s time to reconnect.
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
-
-You can start editing the page by modifying `app/page.js`. The page auto-updates as you edit the file.
-
-This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
-
-## Learn More
-
-To learn more about Next.js, take a look at the following resources:
-
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
-
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
-
-## Deploy on Vercel
-
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
-
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
+🛠️ Technologies Used
+Next.js (App Router)
+React.js
+Tailwind CSS
+LocalStorage (for timeline data)
+Recharts (for analytics)
+Lucide React Icons
+✨ Key Features
+1. 👥 Friend Management
+View all friends in a clean grid UI
+Detailed friend profile page
+Status tracking (On-track, Almost due, Overdue)
+2. ⚡ Interaction Timeline
+Log Call, Text, and Video interactions
+Automatic timestamp tracking
+Stored per friend using LocalStorage
+3. 📊 Analytics Dashboard
+Pie/Donut chart using Recharts
+Visual breakdown of interactions
+Real-time statistics of engagement
